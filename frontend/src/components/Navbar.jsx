@@ -7,7 +7,11 @@ const Navbar = () => {
 
   return (
     <Container maxW={"container.xl"} px={8}>
-      <Flex justifyContent={"space-between"} alignItems={"center"}>
+      <Flex
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        flexDir={{ base: "column", sm: "row" }}
+      >
         <Link to="/">
           <Text
             bgGradient="linear(to-r, cyan.400, blue.600)"
