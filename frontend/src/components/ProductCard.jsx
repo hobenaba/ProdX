@@ -82,7 +82,6 @@ const ProductCard = ({ product }) => {
       <Image
         src={product.image}
         objectFit={"cover"}
-        h={52}
         h={{ base: 40, sm: 52 }}
         w={"full"}
       />

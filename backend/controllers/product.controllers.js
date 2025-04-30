@@ -41,6 +41,10 @@ export const updateProduct = async (req, res) => {
       .json({ success: false, message: "Product Not Found." });
 
   try {
+    if (!updatedProduct.name || !updatedProduct.price || !updatedProduct.image)
+      res
+        .status(400)
+        .json({ success: false, message: "Please Enter all Fields." });
     const document = await Product.findOneAndUpdate(
       { _id: id },
       updatedProduct,
@@ -71,7 +75,6 @@ export const deleteProduct = async (req, res) => {
 
   try {
     const document = await Product.findOneAndDelete({ _id: id });
-    console.log("test : ", document);
     if (!document)
       return res
         .status(404)
